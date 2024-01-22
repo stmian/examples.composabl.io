@@ -44,7 +44,7 @@ config = {
             }
         },
     "env": {
-        "name": "sim-cstr:latest",
+        "name": "sim-cstr",
     },
     "runtime": {
         "ray": {

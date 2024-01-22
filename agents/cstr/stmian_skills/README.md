@@ -144,6 +144,9 @@ This file uses the Scenarios generated in `Scenarios.py` to add training scenari
 This file is where we define how the agent will learn each of the skills.
 This includes defining the Goals and Rules for the teaching agent, as well as individual teaching objects for each unique Skill that must be learned. There are also funcitons to store teaching progress and plot metrics, in order to track continuos improvements.
 
+### Example Outputs 
+
+Pictures to be added once generated
 
 ## References
 

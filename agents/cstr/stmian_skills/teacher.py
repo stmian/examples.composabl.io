@@ -5,7 +5,8 @@
 # @brief   In this file, we create a Teaching class that will be used by the agent.
 #          This teaching class allows you to define your goals for the teaching agent,
 #          as well as add "Action Masks" in order to set rules that the agent must follow.
-#          In addition, several plotting functions have been included for metrics & perofrmance tracking.
+#          Teaching objects are generated for each specific skill that the Agent will train and learn.
+#          In addition, several plotting functions have been included for metrics & performance tracking.
 # @info    https://docs.composabl.io/building-agents/adding-skills/teaching-skills.html
 
 

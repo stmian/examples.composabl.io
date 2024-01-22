@@ -4,6 +4,8 @@ from composabl import Agent, Runtime, Scenario, Sensor, Skill
 from sensors import sensors
 from teacher import CSTRTeacher, SS1Teacher, SS2Teacher, TransitionTeacher
 
+
+
 license_key = os.environ["COMPOSABL_LICENSE"]
 
 PATH = os.path.dirname(os.path.realpath(__file__))
@@ -68,11 +70,11 @@ def start():
         "license": license_key,
         "target": {
             "docker": {
-                "image": "composabl/sim-cstr:latest"
+               "image": "composabl/sim-cstr:latest"
             },
-            #"local": {
-            #   "address": "localhost:1337"
-            #}
+            # "local": {
+            #    "address": "localhost:1337"
+            # }
         },
         "env": {
             "name": "sim-cstr",
@@ -93,20 +95,7 @@ def start():
     agent.add_skill(transition_skill)
     agent.add_selector_skill(selector_skill, [ss1_skill, transition_skill, ss2_skill], fixed_order=False, fixed_order_repeat=False)
 
-    try:
-        files = os.listdir(PATH_CHECKPOINTS)
-
-        if '.DS_Store' in files:
-            files.remove('.DS_Store')
-            os.remove(PATH_CHECKPOINTS + '/.DS_Store')
-
-        if len(files) > 0:
-            agent.load(PATH_CHECKPOINTS)
-
-    except Exception:
-        os.mkdir(PATH_CHECKPOINTS)
-
-    runtime.train(agent, train_iters=10)
+    runtime.train(agent, train_iters=1)
     agent.export(PATH_CHECKPOINTS)
 
 
